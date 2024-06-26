@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Poe_Part_2.Models.Product>
+
+@{
+    ViewData["Title"] = "UserProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewBag.User's Products</h1>
+
+<p>
+    <a asp-action="Index">Back to Users</a>
+</p>
+
+<form asp-action="UserProducts" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Between dates: <input type="date" name="searchDate1" /> and <input type="date" name="searchDate2" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-action="UserProducts">Back to Full List</a>
+        </p>
+        <p>
+            Select product category:
+            <select name="searchCategories" asp-items="ViewBag.CategoryId"></select>
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-action="UserProducts">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <partial>Product Name</partial>
+            </th>
+            <th>
+                <partial>Production Date</partial>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                <partial>Username</partial>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductionDate)
+                </td>
+                <td>
+                    @foreach (var name in ViewBag.CategoryNames)
+                    {
+                        Poe_Part_2.Data.PoeDbContext context = new Poe_Part_2.Data.PoeDbContext();
+                        var category = context.Categories.Find(item.CategoryId);
+                        <partial id="CategoryName">@category.CategoryName</partial>
+                        break;
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsernameNavigation.Username)
+                </td>
+                <td>
+                    <a asp-action="UserProductDetails" asp-route-id="@item.ProductId">Details</a>
+                </td>
+            </tr>
+}
+    </tbody>
+</table>
