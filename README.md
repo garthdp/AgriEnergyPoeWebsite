@@ -25,8 +25,6 @@ username: Admin
 
 password: password
 
-----------------------------------------------------------------------
-
 ## Farmer Account:
 
 username: farmer1
