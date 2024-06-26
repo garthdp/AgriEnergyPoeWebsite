@@ -1,6 +1,6 @@
 # Poe Part 2
 
-Downloading instructions:
+# Downloading instructions:
 
 Get zip from vclearn.
 or
@@ -17,7 +17,7 @@ Once zip is downloaded unzip it
 Then open it in visual studio
 
 
-Accessing sites:
+# Accessing sites:
 
 Admin account:
 
@@ -32,8 +32,6 @@ username: farmer1
 
 password: password
 
+# Extra Information
 
 Farmers and employees has access to different pages so some pages will be unaccessable as a employee and farmer.
-
-
-I also made an azure web app but it doesn't work but here is the link https://garthdppoe.azurewebsites.net
