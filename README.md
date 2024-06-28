@@ -34,3 +34,9 @@ password: password
 # Extra Information
 
 Farmers and employees has access to different pages so some pages will be unaccessable as a employee and farmer.
+
+# Changes based on feedback
+
+Added styling to website because that was the major feedback I recieved. 
+
+Youtube link showcasing changes https://youtu.be/-EdvbBvLFHA
