@@ -40,3 +40,5 @@ Farmers and employees has access to different pages so some pages will be unacce
 Added styling to website because that was the major feedback I recieved. 
 
 Youtube link showcasing changes https://youtu.be/-EdvbBvLFHA
+
+I also improved my read me file
